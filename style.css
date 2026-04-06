@@ -247,36 +247,48 @@ img {
 .hero-clear .hg-l { width: 63%; }
 .hero-clear .hg-r { width: 37%; }
 
-/* ticker — "WHICH / ONE" equivalent, small two-column repeating */
-.hero-ticker {
-    overflow: hidden;
-    padding: 0.4vh 0 0.6vh;
+/* which-block: two text columns + photo in middle */
+.hero-which {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5vh 4% 0.8vh;
     background: var(--orange);
     position: relative;
     z-index: 15;
     user-select: none;
 }
-.ticker-track {
+
+.hw-col {
+    flex: 1;
     display: flex;
-    white-space: nowrap;
-    animation: ticker 22s linear infinite;
-}
-.ticker-track span {
-    font-family: var(--font-system);
-    font-size: min(1.8vh, 1.3vw);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #000;
-    flex-shrink: 0;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-@keyframes ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+.hw-row {
+    font-family: var(--font-system);
+    font-size: min(1.6vh, 1.15vw);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #000;
+    line-height: 1.45;
+    white-space: nowrap;
 }
-@media (prefers-reduced-motion: reduce) {
-    .ticker-track { animation: none; }
+
+.hw-col--r .hw-row { padding-left: 8%; }
+
+.hw-photo {
+    width: 20%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.hw-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* scroll cue */
@@ -957,7 +969,8 @@ img {
         line-height: 1.04;
     }
     .hg-r--offset { padding-left: 8%; }
-    .ticker-track span { font-size: 2.6vw; }
+    .hw-row { font-size: 2.4vw; }
+    .hw-photo { width: 28%; }
 
     /* reposition photos for portrait */
     .hero-photo--a {
