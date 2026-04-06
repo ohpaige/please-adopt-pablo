@@ -266,8 +266,6 @@ img {
     color: #000;
     line-height: 1.45;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
 }
 
 .hw-col--r .hw-row { padding-left: 6%; }
@@ -958,29 +956,25 @@ img {
     /* show extra rows so text fills portrait height */
     .hg-row--mob { display: flex; }
 
-    /* portrait: font driven by vw so text stays readable */
+    /* portrait font — vw-driven so rows pack tight */
     .hg-l, .hg-r,
     .hero-clear .hg-l,
     .hero-clear .hg-r {
-        font-size: min(6.8vw, 5.8vh);
-        line-height: 1.04;
+        font-size: 7.8vw;
+        line-height: 1.03;
     }
     .hg-r--offset { padding-left: 8%; }
-    .hw-row { font-size: 2.4vw; }
-    .hw-photo { width: 28%; }
 
-    /* reposition photos for portrait */
+    /* which-block: smaller text, photo takes up middle */
+    .hw-row { font-size: 3vw; line-height: 1.4; }
+    .hw-photo { width: 30%; margin: 0 1%; }
+
+    /* large photo: overlaps rows like the album — taller on mobile */
     .hero-photo--a {
-        top: 5%;
-        left: 2%;
-        width: 53%;
-        height: 30%;
-    }
-    .hero-photo--b {
-        bottom: 16%;
-        right: 2%;
-        width: 36%;
-        height: 18%;
+        top: 4%;
+        left: 3%;
+        width: 55%;
+        height: 62%;
     }
 
     /* meet: single column */
