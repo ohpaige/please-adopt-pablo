@@ -110,9 +110,23 @@ img {
         floatB  9s ease-in-out 1.5s infinite;
 }
 
+/* which-block: columns and photo animate in with the rest of the hero */
+.hw-col--l {
+    animation: rowIn 0.45s var(--ease-out) 0.55s both;
+}
+.hw-col--r {
+    animation: rowIn 0.45s var(--ease-out) 0.65s both;
+}
+.hw-photo {
+    animation:
+        photoIn 0.9s var(--ease-out) 0.60s both,
+        floatB  9s ease-in-out 1.5s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .hg-row { animation: none; }
     .hero-photo--a, .hero-photo--b { animation: none; }
+    .hw-col--l, .hw-col--r, .hw-photo { animation: none; }
 }
 
 /* ─── CTA BUTTON SHIMMER ─────────────────────────────────────── */
