@@ -877,29 +877,28 @@ img {
     .btn-spinner { animation: none; }
 }
 
-/* ── success ── */
-.success-msg {
-    display: none;
+/* ── adopted celebration ── */
+.adopted-msg {
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 56px 0;
-    gap: 16px;
+    gap: 20px;
 }
-.success-icon {
+.adopted-icon {
     color: var(--orange);
     margin-bottom: 4px;
 }
-.success-msg h3 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    color: var(--text-light);
-    letter-spacing: -0.02em;
-}
-.success-msg p {
-    font-size: 0.95rem;
+.adopted-msg p {
+    font-size: 1.05rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 480px;
+}
+.adopted-msg p + p {
+    color: var(--orange);
+    font-size: 0.92rem;
 }
 
 /* ── contact direct ── */
